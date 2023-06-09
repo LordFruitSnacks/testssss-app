@@ -4,53 +4,48 @@ import { IonReactRouter } from '@ionic/react-router';
 
 import { Route, Redirect } from 'react-router';
 
-import { playCircle, radio, library, search } from 'ionicons/icons';
+import { home, briefcase, settings } from 'ionicons/icons';
 
 import HomePage from './pages/HomePage/HomePage';
-import RadioPage from './pages/InternPage/InternPage';
-import LibraryPage from './pages/JobsPage/JobsPage';
-import SearchPage from './pages/SettingsPage/SettingsPage';
+import Internships from './pages/InternPage/InternPage';
+import Jobs from './pages/JobsPage/JobsPage';
+import Settings from './pages/SettingsPage/SettingsPage';
 
-function Example() {
+const App: React.FC = () => {
   return (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
           <Redirect exact path="/" to="/home" />
-          {/*
-          Use the render method to reduce the number of renders your component will have due to a route change.
-
-          Use the component prop when your component depends on the RouterComponentProps passed in automatically.
-        */}
-          <Route path="/home" render={() => <HomePage />} exact={true} />
-          <Route path="/radio" render={() => <RadioPage />} exact={true} />
-          <Route path="/library" render={() => <LibraryPage />} exact={true} />
-          <Route path="/search" render={() => <SearchPage />} exact={true} />
+          <Route path="/home" component={HomePage} exact />
+          <Route path="/internships" component={Internships} exact />
+          <Route path="/jobs" component={Jobs} exact />
+          <Route path="/settings" component={Settings} exact />
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">
-            <IonIcon icon={playCircle} />
-            <IonLabel>Listen now</IonLabel>
+            <IonIcon icon={home} />
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="radio" href="/radio">
-            <IonIcon icon={radio} />
-            <IonLabel>Radio</IonLabel>
+          <IonTabButton tab="internships" href="/internships">
+            <IonIcon icon={briefcase} />
+            <IonLabel>Internships</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="library" href="/library">
-            <IonIcon icon={library} />
-            <IonLabel>Library</IonLabel>
+          <IonTabButton tab="jobs" href="/jobs">
+            <IonIcon icon={briefcase} />
+            <IonLabel>Jobs</IonLabel>
           </IonTabButton>
 
-          <IonTabButton tab="search" href="/search">
-            <IonIcon icon={search} />
-            <IonLabel>Search</IonLabel>
+          <IonTabButton tab="settings" href="/settings">
+            <IonIcon icon={settings} />
+            <IonLabel>Settings</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
   );
-}
-export default Example;
+};
+export default App;
