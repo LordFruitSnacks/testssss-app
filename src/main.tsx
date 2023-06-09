@@ -11,7 +11,7 @@ import JobsPage from './pages/JobsPage/JobsPage';
 import InternPage from './pages/InternPage/InternPage';
 import SettingsPage from './pages/SettingsPage/SettingsPage';
 
-function Example() {
+const App: React.FC = () => {
   return (
     <IonReactRouter>
       <IonTabs>
@@ -53,4 +53,4 @@ function Example() {
     </IonReactRouter>
   );
 }
-export default Example;
+export default App;
