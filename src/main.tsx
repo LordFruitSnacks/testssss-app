@@ -7,11 +7,11 @@ import { Route, Redirect } from 'react-router';
 import { playCircle, radio, library, search } from 'ionicons/icons';
 
 import HomePage from './pages/HomePage/HomePage';
-import JobsPage from './pages/JobsPage/JobsPage';
-import InternPage from './pages/InternPage/InternPage';
-import SettingsPage from './pages/SettingsPage/SettingsPage';
+import RadioPage from './pages/InternPage/InternPage';
+import LibraryPage from './pages/JobsPage/JobsPage';
+import SearchPage from './pages/SettingsPage/SettingsPage';
 
-const App: React.FC = () => {
+function Example() {
   return (
     <IonReactRouter>
       <IonTabs>
@@ -23,9 +23,9 @@ const App: React.FC = () => {
           Use the component prop when your component depends on the RouterComponentProps passed in automatically.
         */}
           <Route path="/home" render={() => <HomePage />} exact={true} />
-          <Route path="/radio" render={() => <JobsPage />} exact={true} />
-          <Route path="/library" render={() => <InternPage />} exact={true} />
-          <Route path="/search" render={() => <SettingsPage />} exact={true} />
+          <Route path="/radio" render={() => <RadioPage />} exact={true} />
+          <Route path="/library" render={() => <LibraryPage />} exact={true} />
+          <Route path="/search" render={() => <SearchPage />} exact={true} />
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
@@ -52,5 +52,5 @@ const App: React.FC = () => {
       </IonTabs>
     </IonReactRouter>
   );
-};
-ReactDOM.render(<App />, document.getElementById('root'));
+}
+export default Example;
