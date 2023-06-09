@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -52,5 +53,5 @@ const App: React.FC = () => {
       </IonTabs>
     </IonReactRouter>
   );
-}
-export default App;
+};
+ReactDOM.render(<App />, document.getElementById('root'));
