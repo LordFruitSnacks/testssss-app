@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -17,10 +18,10 @@ const App: React.FC = () => {
       <IonTabs>
         <IonRouterOutlet>
           <Redirect exact path="/" to="/home" />
-          <Route path="/home" component={HomePage} exact />
-          <Route path="/internships" component={Internships} exact />
-          <Route path="/jobs" component={Jobs} exact />
-          <Route path="/settings" component={Settings} exact />
+          <Route path="/home" component={HomePage} exact= {true}  />
+          <Route path="/internships" component={Internships} exact= {true}  />
+          <Route path="/jobs" component={Jobs} exact= {true}  />
+          <Route path="/settings" component={Settings} exact = {true} />
         </IonRouterOutlet>
 
         <IonTabBar slot="bottom">
@@ -47,5 +48,6 @@ const App: React.FC = () => {
       </IonTabs>
     </IonReactRouter>
   );
-};
+}
+
 export default App;
