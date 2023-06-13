@@ -11,7 +11,7 @@ import RadioPage from './pages/InternPage/InternPage';
 import LibraryPage from './pages/JobsPage/JobsPage';
 import SearchPage from './pages/SettingsPage/SettingsPage';
 
-function Example() {
+function Main() {
   return (
     <IonReactRouter>
       <IonTabs>
@@ -53,5 +53,8 @@ function Example() {
     </IonReactRouter>
   );
 }
-export default Example;
+
+export default Main;
+
+
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { setupIonicReact, IonApp, IonContent } from '@ionic/react';
+import ReactDOM from 'react-dom';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -20,16 +21,22 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-import Example from './main';
+import Main from './main';
 
 setupIonicReact({ mode: 'ios' });
 
-export default function App() {
+function App() {
   return (
     <IonApp>
       <IonContent className="ion-padding">
-        <Example />
+        <Main />
       </IonContent>
     </IonApp>
   );
 }
+
+export default App;
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
